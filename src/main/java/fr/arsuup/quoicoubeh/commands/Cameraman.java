@@ -46,7 +46,6 @@ public class Cameraman {
                     );
 
                     if (existing.isEmpty()) {
-                        // Création
                         Entity entity = crazyType.create(level);
                         if (entity == null) {
                             source.sendFailure(Component.literal("Erreur A1."));
@@ -63,7 +62,6 @@ public class Cameraman {
                         player.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, MobEffectInstance.INFINITE_DURATION, 255, false, false));
                         source.sendSuccess(() -> Component.literal("Cameraman créé pour " + playerName), false);
 
-                        // Ajout à l'équipe NoCollisions
                         level.getServer().getCommands().performPrefixedCommand(
                                 source.withSuppressedOutput(),
                                 "team join NoCollisions @e[type=goatduloat:crazy_cameraman,name=" + playerName + "]"
